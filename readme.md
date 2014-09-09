@@ -15,14 +15,19 @@ Running php -version should confirm the installation of php 5.3.
 
 BE SURE YOU ADDRESS ERRORS IF ANY DURING THIS PROCESS.
 
-Do a "vagrant halt" in your settler-master directory.
+Do a "vagrant halt" in your settler-master directory and package it up so it can be used elsewhere:
+
+vagrant package
+
+This will create a "package.box" file in the current folder.
 
 Next, download the laravel homestead application from https://github.com/laravel/homestead
 and unzip it into a local folder - say "lamp53"
 
 Navigate into scripts/homestead.rb and change
-config.vm.box from "homestead" to "precise32" (same name you used for creating the php 5.3 box) like so:
+config.vm.box and config.vm.box_url like so:
 
-config.vm.box = "precise32"
+config.vm.box = "php53"
+config.vm.box_url = "file:///c:/settler-master/package.box"
 
-Now, within the lamp53 folder, edit the Homestead.yaml file as required and run "vagrant up". From now on, you will only need to use the lamp53 folder - the settler-master folder was only required for initial setup.
+Now, within the lamp53 folder, edit the Homestead.yaml file as required and run "vagrant up". From now on, you will only need to use the lamp53 folder - the settler-master folder was only required for initial setup. Note the package.box file can be renamed and/or moved to any convenient location on your hard drive.
