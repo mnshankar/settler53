@@ -23,7 +23,7 @@ vagrant package
 
 This will create a "package.box" file in the current folder.
 
-Next, download the laravel homestead application from https://github.com/laravel/homestead
+Next, download the laravel homestead application (V 1.0) from https://github.com/laravel/homestead/tree/v1.0.0
 and unzip it into a local folder - say "lamp53"
 
 Navigate into scripts/homestead.rb and change
